@@ -8,38 +8,38 @@
 public class LinkedList {
 	// Java program to implement 
 	// a Singly Linked List
-	Node head;
+	IntNode head;
 	
 	// Method inserts a node at the end of the list
 	public void InsertNode(int data) {
 		// If the Linked List is empty, 
         // then make the new node as head
 		if(head == null) {
-			head = new Node(data);
+			head = new IntNode(data);
 			return;
 		}
-		Node current = head;
+		IntNode current = head;
 		while(current.next != null) {
 			current = current.next;
 		}
-		current.next = new Node(data);
+		current.next = new IntNode(data);
 	}
 	
 	// Insert at the start of the list
 	public void InsertAtStart(int data) {
-		Node newHead = new Node(data);
+		IntNode newHead = new IntNode(data);
 		newHead.next = head;
 		head = newHead;
 	}
 	
 	// Insert at any location
 	public void InsertAt(int index, int data) {
-		Node node = new Node(data);
+		IntNode node = new IntNode(data);
 		if(index == 0) {
 			InsertAtStart(data);
 		}else {
 		
-		Node n = head;
+		IntNode n = head;
 		for(int i=0; i<index-1; i++) {
 			n = n.next;
 		}
@@ -55,7 +55,7 @@ public class LinkedList {
 			head = head.next;
 			return;
 		}
-		Node current = head;
+		IntNode current = head;
 		while(current.next != null) {
 			if(current.next.data == data) {
 				current.next = current.next.next;
@@ -67,7 +67,7 @@ public class LinkedList {
 	
 	// Method that prints the LinkedList
 	public void PrintList() {
-		Node currentNode = head;
+		IntNode currentNode = head;
 		System.out.print("LinkedList: " + "\n");
 		while(currentNode.next != null) {
 			System.out.println(currentNode.data);
