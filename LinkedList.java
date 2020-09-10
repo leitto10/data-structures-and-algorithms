@@ -33,7 +33,7 @@ public class LinkedList {
 	}
 	
 	// Insert at any location
-	public void InsertAt(int index, int data) {
+	public void InsertAtLocation(int index, int data) {
 		IntNode node = new IntNode(data);
 		if(index == 0) {
 			InsertAtStart(data);
@@ -70,9 +70,66 @@ public class LinkedList {
 		IntNode currentNode = head;
 		System.out.print("LinkedList: " + "\n");
 		while(currentNode.next != null) {
-			System.out.println(currentNode.data);
+			System.out.print(currentNode.data + " --> ");
 			currentNode = currentNode.next;
 		}
 		System.out.println(currentNode.data);
 	}
+	
+	// Remove duplicate elements in the list
+	public void RemoveDuplicates() {
+		//Node current will point to head
+		IntNode current = head, temp = null, index = null;
+		
+		if(head == null) {
+			return;
+		}else {
+			while(current.next != null) {
+				// Node temp will point to previous node to index
+				temp = current;
+				// Index will point to node next to current
+				index = current.next;
+				
+				while(index != null) {
+					if(current.data == index.data) {
+						//Here, index node is pointing to the node which is duplicate of current node  
+                        //Skips the duplicate node by pointing to next node
+						temp.next = index.next;
+					}else {
+						temp = index;
+					}
+					index = index.next;
+				}
+				current = current.next;
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
