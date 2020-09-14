@@ -10,16 +10,17 @@ public class Main {
     	mylist.InsertNode(5);
     	mylist.InsertNode(10);
     	mylist.InsertNode(3);
-    	mylist.InsertNode(6);
-    	mylist.InsertNode(5);
+
     	//mylist.InsertAtLocation(2, 9);
     	
     	//mylist.InsertAtStart(77);
     	//mylist.DeleteNode(6);
     	
     	mylist.PrintList();
-    	mylist.RemoveDuplicates();
+    	mylist.ReverseList();
     	mylist.PrintList();
+    	//mylist.RemoveDuplicates();
+    	//mylist.PrintList();
 		
 		// Creating a Binary Tree
 		//BinarySearchTree tree1 = new BinarySearchTree();

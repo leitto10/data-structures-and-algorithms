@@ -69,11 +69,11 @@ public class LinkedList {
 	public void PrintList() {
 		IntNode currentNode = head;
 		System.out.print("LinkedList: " + "\n");
-		while(currentNode.next != null) {
+		while(currentNode != null) {
 			System.out.print(currentNode.data + " --> ");
 			currentNode = currentNode.next;
 		}
-		System.out.println(currentNode.data);
+		System.out.println(currentNode);
 	}
 	
 	// Remove duplicate elements in the list
@@ -106,7 +106,20 @@ public class LinkedList {
 		
 	}
 	
-	
+	// Reverse the Linked List
+	public void ReverseList() {
+		IntNode current = head;
+		IntNode prev = null, index = null;
+		
+		while(current != null) {
+			index = current;
+			current = current.next;
+			// Reverse the reference / pointer
+			index.next = prev;
+			prev = index;
+			head = index;
+		}
+	}
 	
 	
 	
