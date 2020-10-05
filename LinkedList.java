@@ -1,8 +1,8 @@
 /* *********************************************************************************
- * Program Name:		EarthDay.java
- * Date Created:		March 4, 2018
+ * Program Name:		Linked List
+ * Date Created:		September 13, 2020
  * Author(s): 		    Jose L Lopez
- * Title: 		        LinkedList
+ * Title: 		        Linked List
  * Description:         
  * *********************************************************************************/
 public class LinkedList {
@@ -48,9 +48,8 @@ public class LinkedList {
 		}
 	}
 	
-	// This method deletes a node by given index position
+	// This method deletes a node by its value
 	public void DeleteNode(int data) {
-		if(head == null) return;
 		if(head.data == data) {
 			head = head.next;
 			return;
@@ -89,7 +88,6 @@ public class LinkedList {
 				temp = current;
 				// Index will point to node next to current
 				index = current.next;
-				
 				while(index != null) {
 					if(current.data == index.data) {
 						//Here, index node is pointing to the node which is duplicate of current node  
@@ -103,7 +101,6 @@ public class LinkedList {
 				current = current.next;
 			}
 		}
-		
 	}
 	
 	// Reverse the Linked List
@@ -121,11 +118,32 @@ public class LinkedList {
 		}
 	}
 	
+	// main method that runs our program
+	public static void main(String[] args) {
+		// Creating a LinkedList object
+    	LinkedList mylist = new LinkedList();
+    	
+    	mylist.InsertNode(6);
+    	mylist.InsertNode(2);
+    	mylist.InsertNode(5);
+    	mylist.InsertNode(10);
+    	mylist.InsertNode(3);
+
+    	//mylist.InsertAtLocation(2, 9);
+    	
+    	//mylist.InsertAtStart(77);
+    	//mylist.DeleteNode(6);
+    	
+    	mylist.PrintList();
+    	mylist.ReverseList();
+    	mylist.PrintList();
+    	System.out.println(" ");
+    	//mylist.RemoveDuplicates();
+    	//mylist.PrintList();
 	
 	
 	
-	
-	
+	}
 	
 }
 

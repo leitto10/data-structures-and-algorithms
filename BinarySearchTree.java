@@ -97,6 +97,30 @@ public class BinarySearchTree {
 		System.out.println(" ");
 	}
 	
+	public static void main(String[] args) {
+		
+		
+		// Creating a Binary Tree
+		BinarySearchTree tree1 = new BinarySearchTree();
+		
+		// Populating the tree
+		tree1.Insert(7);
+		tree1.Insert(10);
+		tree1.Insert(5);
+		tree1.Insert(3);
+		tree1.Insert(6);
+		tree1.Insert(8);
+		tree1.Insert(11);
+		
+		tree1.InOrder();
+		tree1.PostOrder();
+		tree1.PreOrder();
+		
+		//tree1.Delete(11);
+		//tree1.Delete(9);
+		//tree1.InOrder();
+		
+	}
 
 }
 
