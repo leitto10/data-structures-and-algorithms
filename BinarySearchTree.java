@@ -68,6 +68,15 @@ public class BinarySearchTree {
 		System.out.println(" ");
 	}
 	
+	public int minValue(Node root) { 
+        int minv = root.value; 
+        while (root.left != null) { 
+            minv = root.left.value; 
+            root = root.left; 
+        } 
+        return minv; 
+    }
+	
 	// Delete a node from the tree
 	public Node DeleteNode(Node root, int value) {
 		// If the tree is empty
@@ -88,6 +97,13 @@ public class BinarySearchTree {
 				return root.right;
 			else if(root.right == null)
 				return root.left;
+			
+			// node with two children: Get the inorder successor (smallest 
+            // in the right subtree) 
+            root.value = minValue(root.right); 
+  
+            // Delete the inorder successor 
+            root.right = DeleteNode(root.right, root.value); 
 		}
 		return root;
 	}
@@ -116,9 +132,9 @@ public class BinarySearchTree {
 		tree1.PostOrder();
 		tree1.PreOrder();
 		
-		//tree1.Delete(11);
+		tree1.Delete(10);
 		//tree1.Delete(9);
-		//tree1.InOrder();
+		tree1.InOrder();
 		
 	}
 
