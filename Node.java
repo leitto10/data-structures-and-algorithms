@@ -1,12 +1,12 @@
 
 public class Node {
 	
-	int value;
+	int data;
 	Node right;
 	Node left;
 
-	public Node(int value) {
-		this.value = value;
+	public Node(int data) {
+		this.data = data;
 		right = null;
 		left = null;
 	}
