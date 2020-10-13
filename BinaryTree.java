@@ -36,9 +36,37 @@ public class BinaryTree {
 		}
 	}
 	public void InOrder() {
-		System.out.print("Inorder traversal \n");
+		System.out.println("Treaverse the tree Inorder");
 		InOrderTraversal(root);
-		System.out.print("\n");
+		System.out.println("\n");
+	}
+	
+	// Traverse the tree in PreOrder
+	public void PreOrderTraver(Node root) {
+		if(root != null) {
+			System.out.print(root.data + " ");
+			PreOrderTraver(root.left);
+			PreOrderTraver(root.right);
+		}
+	}
+	public void PreOrder() {
+		System.out.println("Treaverse the tree in PreOrder");
+		PreOrderTraver(root);
+		System.out.println("\n");
+	}
+		
+	// Traverse the tree in PostOrder
+	public void PostOrderTraver(Node root) {
+		if(root != null) {
+			PostOrderTraver(root.left);
+			PostOrderTraver(root.right);
+			System.out.print(root.data + " ");
+		}
+	}
+	public void PostOrder() {
+		System.out.println("Treaverse the tree in PostOrder");
+		PostOrderTraver(root);
+		System.out.println("\n");
 	}
 	
 	public int MinValue(Node root) {
@@ -83,9 +111,28 @@ public class BinaryTree {
 		root = DeleteNode(root, value);
 	}
 	
+	// invert the binary tree
+	public Node InvertTree(Node root) {
+		if(root == null) return root;
+		
+		// Otherwise, recur down the tree
+		Node right = InvertTree(root.right);
+		Node left = InvertTree(root.left);
+		/* swap the left and right pointers */
+		root.left = right;
+		root.right = left;
+		
+		return root;
+	}
+	public void Invert() {
+		System.out.print("Inverting the tree: \n");
+		root = InvertTree(root);
+	}
+	
 	// main method to run our project
 	public static void main(String[] args) {
 		BinaryTree mytree = new BinaryTree();
+		BinaryTree tree2 = new BinaryTree();
 		
 		mytree.Insert(50);
 		mytree.Insert(30);
@@ -95,13 +142,25 @@ public class BinaryTree {
 		mytree.Insert(60);
 		mytree.Insert(80);
 		mytree.InOrder();
+		mytree.PreOrder();
+		mytree.PostOrder();
 		
-		mytree.Delete(20);
-		mytree.InOrder();
-		mytree.Delete(30);
-		mytree.InOrder();
-		mytree.Delete(50);
-		mytree.InOrder();
+		// traversing the tree
+		//           2                  2
+		//          / \                / \
+		//         1   4    --->      4   1
+		//            / \            / \
+		//           3   5          5   3
+		tree2.Insert(2);
+		tree2.Insert(1);
+		tree2.Insert(4);
+	    tree2.Insert(3);
+		tree2.Insert(5);
+		tree2.InOrder();
+		
+		tree2.Invert();
+		tree2.InOrder();
+		
 	}
 
 }
