@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /* *********************************************************************************
  * Program Name:		Linked List
  * Date Created:		September 13, 2020
@@ -72,34 +74,50 @@ public class LinkedList {
 			System.out.print(currentNode.data + " --> ");
 			currentNode = currentNode.next;
 		}
-		System.out.println(currentNode);
+		System.out.println("\n");
 	}
 	
-	// Remove duplicate elements in the list
-	public void RemoveDuplicates() {
-		//Node current will point to head
-		IntNode current = head, temp = null, index = null;
-		
-		if(head == null) {
-			return;
-		}else {
-			while(current.next != null) {
-				// Node temp will point to previous node to index
-				temp = current;
-				// Index will point to node next to current
-				index = current.next;
-				while(index != null) {
-					if(current.data == index.data) {
-						//Here, index node is pointing to the node which is duplicate of current node  
-                        //Skips the duplicate node by pointing to next node
-						temp.next = index.next;
-					}else {
-						temp = index;
-					}
-					index = index.next;
+	// remove duplicates from unsorted linked list
+	// Time Complexity: O(n^2)
+	public void RemoveDup() {
+		System.out.print("Removing duplicates Time Complexity: O(n^2) \n");
+		if(head == null) return;
+			
+		IntNode current = head;
+		IntNode temp = null, index = null;
+		while(current != null) {
+			temp = current;
+			index = current.next;
+			while(index != null) {
+				if(current.data == index.data) {
+					temp.next = index.next;
+				}else {
+					temp = index;
 				}
-				current = current.next;
+				index = index.next;
 			}
+			current = current.next;
+		}
+	}
+	
+	// remove duplicates hash set
+	//Time Complexity: O(n)
+	public void RemoveDuplicates() {
+		System.out.print("Removing duplicates Time Complexity: O(n) \n");
+		if(head == null) return;
+			
+		IntNode current = head;
+		IntNode temp = null;
+			
+		HashSet<Integer> storage = new HashSet<>();
+		while(current != null) {
+			if(storage.contains(current.data)) {
+				temp.next = current.next;
+			}else {
+				storage.add(current.data);
+				temp = current;
+			}
+			current = current.next;
 		}
 	}
 	
@@ -118,11 +136,39 @@ public class LinkedList {
 		}
 	}
 	
+	// Time Complexity: O(n) where n is the length of linked list.
+	// Implement an algorithm to find the nth to last element of a singly linked list
+	public void NthLastElement(int value) {
+		IntNode current = head;
+		IntNode temp = head;
+		int count = 0;
+		
+		if(head != null) {
+			while(count < value) {
+				if(temp == null) {
+					System.out.print(value + " is larger than the lenght of out linked list.");
+					return;
+				}
+				temp = temp.next;
+				count++;
+			}
+			while(temp != null) {
+				current = current.next;
+				temp = temp.next;
+			}
+			
+			System.out.print("The position element "+ value + " from the last is "+ current.data);
+		}
+		
+	}
+	
 	// main method that runs our program
 	public static void main(String[] args) {
 		// Creating a LinkedList object
     	LinkedList mylist = new LinkedList();
     	
+    	mylist.InsertNode(6);
+    	mylist.InsertNode(2);
     	mylist.InsertNode(6);
     	mylist.InsertNode(2);
     	mylist.InsertNode(5);
@@ -135,11 +181,14 @@ public class LinkedList {
     	//mylist.DeleteNode(6);
     	
     	mylist.PrintList();
-    	mylist.ReverseList();
+    	mylist.DeleteNode(3);
+    	
+    	//mylist.ReverseList();
+    	
+    	mylist.RemoveDuplicates();
     	mylist.PrintList();
-    	System.out.println(" ");
-    	//mylist.RemoveDuplicates();
-    	//mylist.PrintList();
+    	
+    	mylist.NthLastElement(5);
 	
 	
 	
