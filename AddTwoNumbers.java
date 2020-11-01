@@ -57,8 +57,29 @@ public class AddTwoNumbers {
 		}
 		System.out.print("\n");
 	}
+	
+	// reverse the linked list for a better visual result
+	public static IntNode Reverse(IntNode node) {
+		System.out.print("Reversing the list: \n");
+		IntNode current = node;
+		IntNode index = null, prev = null;
+		
+		while(current != null) {
+			index = current.next;
+			current.next = prev;
+			prev = current;
+			current = index;
+		}
+		node = prev;
+		return node;
+	}
 
 	public static void main(String[] args) {
+		
+		// traditional addition
+		//    5 5
+		//  + 5 4
+		//  1 0 9  answer
 		
 		IntNode l1 = new IntNode(5);
 		l1.next = new IntNode(5);
@@ -69,6 +90,9 @@ public class AddTwoNumbers {
 		PrintList(l2);
 		
 		IntNode result = AddNumbers(l1, l2);
+		PrintList(result);
+		
+		result = Reverse(result);
 		PrintList(result);
 
 	}
