@@ -69,48 +69,6 @@ public class BinaryTree {
 		System.out.println("\n");
 	}
 	
-	public int MinValue(Node root) {
-		int minv = root.data; 
-		
-		while(root.left != null) {
-			minv = root.left.data; 
-            root = root.left;
-		}
-		return minv;
-	}
-	
-	// delete any node in the tree
-	public Node DeleteNode(Node root, int value) {
-		// check if the tree is empty
-		if(root == null) return root;
-		
-		//Otherwise, recur down the tree
-		if(value < root.data)
-			root.left = DeleteNode(root.left, value);
-		else if(value > root.data)
-			root.right = DeleteNode(root.right, value);
-		// if key is same as root's key, then This is the node 
-        // to be deleted
-		else {
-			// node with only one child or no child 
-			if(root.right == null)
-				return root.left;
-			else if(root.left == null)
-				return root.right;
-			// node with two children: Get the inorder successor (smallest 
-            // in the right subtree)
-			root.data = MinValue(root.right);
-			// Delete the inorder successor 
-            root.right = DeleteNode(root.right, root.data); 
-		}
-		
-		return root;
-	}
-	public void Delete(int value) {
-		System.out.print("Node Deleted: " + value + "\n");
-		root = DeleteNode(root, value);
-	}
-	
 	// invert the binary tree
 	public Node InvertTree(Node root) {
 		if(root == null) return root;
