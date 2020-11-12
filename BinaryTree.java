@@ -69,24 +69,6 @@ public class BinaryTree {
 		System.out.println("\n");
 	}
 	
-	// invert the binary tree
-	public Node InvertTree(Node root) {
-		if(root == null) return root;
-		
-		// Otherwise, recur down the tree
-		Node right = InvertTree(root.right);
-		Node left = InvertTree(root.left);
-		/* swap the left and right pointers */
-		root.left = right;
-		root.right = left;
-		
-		return root;
-	}
-	public void Invert() {
-		System.out.print("Inverting the tree: \n");
-		root = InvertTree(root);
-	}
-	
 	// main method to run our project
 	public static void main(String[] args) {
 		BinaryTree mytree = new BinaryTree();
@@ -103,21 +85,6 @@ public class BinaryTree {
 		mytree.PreOrder();
 		mytree.PostOrder();
 		
-		// traversing the tree
-		//           2                  2
-		//          / \                / \
-		//         1   4    --->      4   1
-		//            / \            / \
-		//           3   5          5   3
-		tree2.Insert(2);
-		tree2.Insert(1);
-		tree2.Insert(4);
-	    tree2.Insert(3);
-		tree2.Insert(5);
-		tree2.InOrder();
-		
-		tree2.Invert();
-		tree2.InOrder();
 		
 	}
 

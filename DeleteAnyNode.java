@@ -1,3 +1,9 @@
+/*
+ * Time Complexity: The worst case time complexity of delete operation is O(h) 
+ * where h is height of Binary Search Tree. In worst case, we may have to travel 
+ * from root to the deepest leaf node. The height of a skewed tree may become n 
+ * and the time complexity of delete operation may become O(n) 
+ */
 
 public class DeleteAnyNode {
 	
