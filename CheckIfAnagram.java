@@ -1,13 +1,12 @@
 
 public class CheckIfAnagram {
-	// check if tow strings are anagrams
+	// check if two strings are anagrams
 	
-	//time complexity of O(n). However, it needs extra space for the counting array. 
-	//At 256 integers, for ASCII that's not too bad.
 	public static boolean isAnagram(String str1, String str2) {
 		// check if the length are not equal, therefore they are not anagram
-		if(str1.length() != str2.length()) return false;
-		
+		if(str1.length() != str2.length()) {
+			return false;
+		}
 		// let's convert all to lower case to make our lives a little easier 
 		str1 = str1.toLowerCase();
 		str2 = str2.toLowerCase();
@@ -34,9 +33,11 @@ public class CheckIfAnagram {
 	}
 
 	public static void main(String[] args) {
+		//time complexity of O(n). However, it needs extra space for the counting array. 
+		//At 256 integers, for ASCII that's not too bad.
 		
 		String s1 = "JOSELopez";
-		String s2 = "lopezjose";
+		String s2 = "lopezjoSe";
 		
 		System.out.print(isAnagram(s1, s2));
 

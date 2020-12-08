@@ -17,9 +17,8 @@ public class ArrayListProblems {
 		return max;
 	}
 	
-	//Write the output produced by the method when passed each of the 
-	//following ArrayLists
-	
+	//Write a method removeEvenLength that takes an ArrayList of Strings as a parameter 
+	//and that removes all of the strings of even length from the list.
 
 	public static void main(String[] args) {
 		
