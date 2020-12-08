@@ -16,6 +16,10 @@ public class ArrayListProblems {
 		
 		return max;
 	}
+	
+	//Write the output produced by the method when passed each of the 
+	//following ArrayLists
+	
 
 	public static void main(String[] args) {
 		
