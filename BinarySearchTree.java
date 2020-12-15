@@ -1,9 +1,9 @@
 
-public class BinaryTree {
+public class BinarySearchTree {
 	// root of the tree
 	Node root;
 
-	public BinaryTree() {
+	public BinarySearchTree() {
 		root = null;
 	}
 	
@@ -71,8 +71,12 @@ public class BinaryTree {
 	
 	// main method to run our project
 	public static void main(String[] args) {
-		BinaryTree mytree = new BinaryTree();
-		BinaryTree tree2 = new BinaryTree();
+		//         50
+		//        /  \
+		//      30    70
+		//     / \    / \
+		//    20 40  60 80
+		BinarySearchTree mytree = new BinarySearchTree();
 		
 		mytree.Insert(50);
 		mytree.Insert(30);
@@ -84,6 +88,8 @@ public class BinaryTree {
 		mytree.InOrder();
 		mytree.PreOrder();
 		mytree.PostOrder();
+		
+		
 		
 		
 	}

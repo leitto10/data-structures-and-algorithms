@@ -24,10 +24,11 @@ public class AddTwoNumbers {
 				l2 = l2.next;
 			}
 			
+			// if sum of 2-digit number, reduce it and update carry
 			sum += carry;
-			carry = sum /10; // 1
+			carry = sum /10;
 			
-			int value = sum % 10; // 1
+			int value = sum % 10;
 			
 			IntNode node = new IntNode(value);
 			
