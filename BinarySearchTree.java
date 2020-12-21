@@ -1,72 +1,49 @@
 
 public class BinarySearchTree {
 	// root of the tree
-	Node root;
-
-	public BinarySearchTree() {
-		root = null;
-	}
+	public static Node root;
 	
-	// insert nodes to the tree
-	public Node InsertNode(Node root, int value) {
-		// If the tree is empty, return a new node
+	public Node insertNode(Node root, int value) {
+		//base case check if roo == null
 		if(root == null) {
 			root = new Node(value);
 			return root;
 		}
 		
-		// Otherwise, recur down the tree
-		if(value < root.data)
-			root.left = InsertNode(root.left, value);
+		if(value < root.data) 
+			root.left = insertNode(root.left, value);
 		else if(value > root.data)
-			root.right = InsertNode(root.right, value);
+			root.right = insertNode(root.right, value);
 		
 		return root;
-	}
-	public void Insert(int value) {
-		root = InsertNode(root, value);
+		
 	}
 	
 	// print in order traversal
-	public void InOrderTraversal(Node root) {
+	public static void inorderTraversal(Node root) {
 		if(root != null) {
-			InOrderTraversal(root.left);
+			inorderTraversal(root.left);
 			System.out.print(root.data + " ");
-			InOrderTraversal(root.right);
+			inorderTraversal(root.right);
 		}
-	}
-	public void InOrder() {
-		System.out.println("Treaverse the tree Inorder");
-		InOrderTraversal(root);
-		System.out.println("\n");
 	}
 	
 	// Traverse the tree in PreOrder
-	public void PreOrderTraver(Node root) {
+	public static void PreOrderTraver(Node root) {
 		if(root != null) {
 			System.out.print(root.data + " ");
 			PreOrderTraver(root.left);
 			PreOrderTraver(root.right);
 		}
 	}
-	public void PreOrder() {
-		System.out.println("Treaverse the tree in PreOrder");
-		PreOrderTraver(root);
-		System.out.println("\n");
-	}
 		
 	// Traverse the tree in PostOrder
-	public void PostOrderTraver(Node root) {
+	public static void PostOrderTraver(Node root) {
 		if(root != null) {
 			PostOrderTraver(root.left);
 			PostOrderTraver(root.right);
 			System.out.print(root.data + " ");
 		}
-	}
-	public void PostOrder() {
-		System.out.println("Treaverse the tree in PostOrder");
-		PostOrderTraver(root);
-		System.out.println("\n");
 	}
 	
 	// main method to run our project
@@ -78,19 +55,19 @@ public class BinarySearchTree {
 		//    20 40  60 80
 		BinarySearchTree mytree = new BinarySearchTree();
 		
-		mytree.Insert(50);
-		mytree.Insert(30);
-		mytree.Insert(20);
-		mytree.Insert(40);
-		mytree.Insert(70);
-		mytree.Insert(60);
-		mytree.Insert(80);
-		mytree.InOrder();
-		mytree.PreOrder();
-		mytree.PostOrder();
+		int[] arr = {30, 20, 40, 70, 60, 80};
+		Node root = new Node(50);
 		
+		for(int i: arr) {
+			mytree.insertNode(root, i);
+		}
 		
-		
+		System.out.println("Traversing the tree inorder");
+		inorderTraversal(root);
+		System.out.println("\nTraversing the tree in pre order");
+		PreOrderTraver(root);
+		System.out.println("\nTraversing the tree in post order");
+		PostOrderTraver(root);
 		
 	}
 

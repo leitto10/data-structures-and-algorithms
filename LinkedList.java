@@ -181,14 +181,14 @@ public class LinkedList {
     	//mylist.DeleteNode(6);
     	
     	mylist.PrintList();
-    	mylist.DeleteNode(3);
+    	mylist.DeleteNode(6);
     	
     	//mylist.ReverseList();
     	
-    	mylist.RemoveDuplicates();
+//    	mylist.RemoveDuplicates();
     	mylist.PrintList();
-    	
-    	mylist.NthLastElement(5);
+//    	
+//    	mylist.NthLastElement(5);
 	
 	
 	

@@ -1,6 +1,34 @@
 import java.util.*;
 
 public class ArrayListProblems {
+	/*
+	 * Write a method swapPairs that switches the order of values in an ArrayList of 
+	 * Strings in a pairwise fashion. Your method should switch the order of the first 
+	 * two values, then switch the order of the next two, switch the order of the next 
+	 * two, and so on. For example, if the list initially stores these values: 
+	 * {"four", "score", "and", "seven", "years", "ago"} your method should switch the 
+	 * first pair, "four", "score", the second pair, "and", "seven", and the third pair, 
+	 * "years", "ago", to yield this list: {"score", "four", "seven", "and", "ago", "years"}
+	 * If there are an odd number of values in the list, the final element is not moved. 
+	 * 
+	 * For example, if the original list had been: 
+	 * {"to", "be", "or", "not", "to", "be", "hamlet"} It would again switch pairs of 
+	 * values, but the final value, "hamlet" would not be moved, yielding this list: 
+	 * {"be", "to", "not", "or", "be", "to", "hamlet"}
+	 * */
+	public static void swapPairs(ArrayList<String> list) {
+		for(int i=0; i<list.size()-1; i+=2) {
+			String a = list.get(i+1);
+			String b = list.get(i);
+			
+			list.set(i, a);
+			list.set(i+1, b);
+		}
+		
+		System.out.print(list);
+	}
+	
+	
 	//Write a method maxLength that takes an ArrayList of Strings as a parameter and 
 	//that returns the length of the longest string in the list. If your method is 
 	//passed an empty list, it should return 0.
@@ -106,6 +134,9 @@ public class ArrayListProblems {
 				Arrays.asList("be", "be", "is", "not", "or", "question", "that", "the", "to", "to"));
 		
 		removeDuplicates(list4);
+		
+		System.out.print("\nSwaping strings: \n");
+		swapPairs(list4);
 	}
 
 }
