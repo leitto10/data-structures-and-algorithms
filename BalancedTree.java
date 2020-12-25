@@ -57,15 +57,15 @@ public class BalancedTree {
 
 	public static void main(String[] args) {
 		// Tree in example 1
-        Node root = new Node(18);
-        root.left = new Node(4);
-        root.right = new Node(20);
-        root.right.left = new Node(13);
-        root.right.right = new Node(70);
-        Inorder(root);
-        //System.out.print("\nThe height of the tree is: " + getHeight(root));
-        System.out.print("\n");
-        System.out.println(isBalanced(root));
+//        Node root = new Node(18);
+//        root.left = new Node(4);
+//        root.right = new Node(20);
+//        root.right.left = new Node(13);
+//        root.right.right = new Node(70);
+//        Inorder(root);
+//
+//        System.out.print("\n");
+//        System.out.println(isBalanced(root));
         
         System.out.print("\n");
         
@@ -78,7 +78,7 @@ public class BalancedTree {
         root2.right.right = new Node(7);
         root2.right.right.left = new Node(6);
         Inorder(root2);
-        //System.out.print("\nThe height of the tree is: " + getHeight(root2));
+        
         System.out.print("\n");
         System.out.println(isBalanced(root2));
 
