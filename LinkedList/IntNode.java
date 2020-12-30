@@ -1,3 +1,5 @@
+package LinkedList;
+
 /* *********************************************************************************
  * Program Name:		EarthDay.java
  * Date Created:		March 4, 2018

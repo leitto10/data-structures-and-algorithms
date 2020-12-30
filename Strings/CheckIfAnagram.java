@@ -1,3 +1,5 @@
+package Strings;
+
 
 public class CheckIfAnagram {
 	// check if two strings are anagrams

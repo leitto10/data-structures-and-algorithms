@@ -1,3 +1,5 @@
+package Tress;
+
 /*
  * Time Complexity: The worst case time complexity of delete operation is O(h) 
  * where h is height of Binary Search Tree. In worst case, we may have to travel 
