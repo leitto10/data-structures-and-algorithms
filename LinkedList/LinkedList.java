@@ -154,12 +154,13 @@ public class LinkedList {
 				temp = temp.next;
 				count++;
 			}
+			
 			while(temp != null) {
 				current = current.next;
 				temp = temp.next;
 			}
 			
-			System.out.print("The position element "+ value + " from the last is "+ current.data);
+			System.out.print("Node no. "+ value + " from the last is "+ current.data);
 		}
 		
 	}
@@ -169,7 +170,7 @@ public class LinkedList {
 		// Creating a LinkedList object
     	LinkedList mylist = new LinkedList();
     	
-    	mylist.InsertNode(6);
+    	//mylist.InsertNode(6);
     	mylist.InsertNode(2);
     	mylist.InsertNode(6);
     	mylist.InsertNode(2);
@@ -182,15 +183,15 @@ public class LinkedList {
     	//mylist.InsertAtStart(77);
     	//mylist.DeleteNode(6);
     	
-    	mylist.PrintList();
-    	mylist.DeleteNode(6);
+    	//mylist.PrintList();
+    	//mylist.DeleteNode(6);
     	
     	//mylist.ReverseList();
     	
 //    	mylist.RemoveDuplicates();
     	mylist.PrintList();
 //    	
-//    	mylist.NthLastElement(5);
+    	mylist.NthLastElement(5);
 	
 	
 	
