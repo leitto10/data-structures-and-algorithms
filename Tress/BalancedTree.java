@@ -59,6 +59,13 @@ public class BalancedTree {
 
 	public static void main(String[] args) {
 		// Tree in example 1
+		//          18
+		//         /   \
+		//        4     20
+		//              / \
+		//             13  70
+		//                
+		//               
 //        Node root = new Node(18);
 //        root.left = new Node(4);
 //        root.right = new Node(20);
@@ -77,12 +84,19 @@ public class BalancedTree {
         root2.right = new Node(8);
         root2.left.left = new Node(5);
         root2.left.right = new Node(9);
-        root2.right.right = new Node(7);
-        root2.right.right.left = new Node(6);
+        //root2.right.right = new Node(7);
+        root2.left.left.left = new Node(6);
         Inorder(root2);
         
         System.out.print("\n");
         System.out.println(isBalanced(root2));
+        //           3
+        //         /   \
+        //        4     8
+        //      /  \    / \
+        //     5   9      
+        //    /
+        //   6
 
 	}
 

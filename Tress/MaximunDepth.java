@@ -45,7 +45,7 @@ public class MaximunDepth {
 		root.right.right = new Node(70);
 		root.right.right.right = new Node(80);
 		
-		System.out.print("Height of tree is : " + maximunDepth(root));
+		System.out.print("The max depth is : " + maximunDepth(root));
 
 	}
 
