@@ -16,6 +16,7 @@ public class ReverseArray {
 			// move the left and right index pointers in toward the center
 			left++;
 			right--;
+			
 		}
 		
 		return nums;

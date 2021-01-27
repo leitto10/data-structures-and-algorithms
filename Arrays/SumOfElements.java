@@ -20,6 +20,7 @@ public class SumOfElements {
 		int[] a = {1, 2, 3};
 		
 		System.out.print(simpleArraySum(a));
+		
 	}
 
 }

@@ -14,6 +14,7 @@ public class BubbleSort {
 		int[] arr = {2, 7, 1, 3, 5, 4, 6};
 
 		printArray(arr);
+		
 	}
 
 }
