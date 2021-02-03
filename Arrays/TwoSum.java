@@ -59,7 +59,7 @@ public class TwoSum {
 		// index     0  1  2   3
 		int[] arr = {2, 7, 11, 15};
 		
-		int[] result = twoSumN2(arr, 9);
+		int[] result = twoSum(arr, 9);
 		System.out.print("The indexes are: ");
 		for(int i: result) {
 			System.out.print(result[i] + ", ");
@@ -68,13 +68,13 @@ public class TwoSum {
 		System.out.print("\n");
 		
 		// index      0  1  2
-		int[] arr2 = {3, 2, 4};
-		
-		int[] result2 = twoSumN2(arr2, 6);
-		System.out.print("The indexes are: ");
-		for(int i=0; i<result2.length; i++) {
-			System.out.print(result2[i] + ", ");
-		}
+//		int[] arr2 = {3, 2, 4};
+//		
+//		int[] result2 = twoSumN2(arr2, 6);
+//		System.out.print("The indexes are: ");
+//		for(int i=0; i<result2.length; i++) {
+//			System.out.print(result2[i] + ", ");
+//		}
 
 	}
 

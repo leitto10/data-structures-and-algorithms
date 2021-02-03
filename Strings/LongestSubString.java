@@ -22,12 +22,35 @@ package Strings;
  * Input: s = ""
  * Output: 0
  * */
+import java.util.*;
 
 public class LongestSubString {
+	
+	public static int longestSubString(String s) {
+		if(s == null || s.length() == 0) return 0;
+		
+		int i=0, j=0, max=0;
+		Set<Character> container = new HashSet<>();
+		while(i < s.length()) {
+			char c = s.charAt(i);
+			while(container.contains(c)) {
+				container.remove(s.charAt(j));
+				j++;
+			}
+			container.add(c);
+			max = Math.max(max, i-j+1);
+			i++;
+		}
+		
+		return max;
+	}
 
 	public static void main(String[] args) {
 		
-		String mystring = "abcabcbb";
+		String mystring = "pwwkew";
+		
+		System.out.print(
+		longestSubString(mystring));
 		
 
 	}

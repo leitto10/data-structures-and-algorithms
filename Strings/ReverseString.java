@@ -22,15 +22,15 @@ public class ReverseString {
 	public static String reverse2(String s) {
 		char[] letters = s.toCharArray();
 		
-		int left = 0;
-		int right = letters.length-1;
+		int i = 0;
+		int j = letters.length-1;
 		
-		while(left < right) {
-			char temp = letters[left];
-			letters[left] = letters[right];
-			letters[right] = temp;
-			left++;
-			right--;
+		while(i < j) {
+			char temp = letters[i];
+			letters[i] = letters[j];
+			letters[j] = temp;
+			i++;
+			j--;
 		}
 		
 		return new String(letters);
@@ -39,6 +39,10 @@ public class ReverseString {
 	public static void main(String[] args) {
 		
 		String mystring = "I love tacos";
+		//                 s love tacoI
+		//                  ^        ^
+		//                  |        |
+		//                  i        j
 		
 		//System.out.print(reverse(mystring));
 		System.out.print(reverse2(mystring));
