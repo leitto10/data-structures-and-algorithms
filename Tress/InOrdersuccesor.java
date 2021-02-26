@@ -1,5 +1,7 @@
 package Tress;
 
+// Time complexity of this solutions is O(n), where n is the size of the BST
+// Auxiliary space is O(i), Due to no use of any data structure for storing values.
 public class InOrdersuccesor {
 	
 	// Helper function to find minimum value node in given BST
@@ -10,6 +12,7 @@ public class InOrdersuccesor {
 		return root;
 	}
 	
+	// Iterative function to find an inorder successor for the given key in the BST
 	public static Node findSuccesor(Node root, int value) {
 		Node succ = null;
 		
@@ -70,7 +73,7 @@ public class InOrdersuccesor {
 //		Node min = findMinVal(root);
 //		System.out.print(min.data);
 		
-		Node sucessor = findSuccesor(root, 8);
+		Node sucessor = findSuccesor(root, 16);
 		if(sucessor != null) {
 			System.out.print("The successor is: " + sucessor.data);
 		}else {

@@ -43,7 +43,7 @@ public class MergeTwoSortedList {
 
 	public static void main(String[] args) {
 		
-		IntNode l1 = new IntNode(1);
+		IntNode l1 = new IntNode(5);
 		l1.next = new IntNode(3);
 		l1.next.next = new IntNode(5);
 		printList(l1);

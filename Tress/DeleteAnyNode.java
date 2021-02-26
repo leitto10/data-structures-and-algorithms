@@ -17,14 +17,12 @@ public class DeleteAnyNode {
 		}
 	}
 	
-	public static int MinValue(Node root) {
-		int minv = root.data; 
-		
+	// helper function to find the minimum value on the right subtree
+	public static Node MinValue(Node root) {
 		while(root.left != null) {
-			minv = root.left.data; 
             root = root.left;
 		}
-		return minv;
+		return root;
 	}
 	
 	// delete any node in the tree
@@ -47,7 +45,8 @@ public class DeleteAnyNode {
 				return root.right;
 			// node with two children: Get the in order successor (smallest 
             // in the right subtree)
-			root.data = MinValue(root.right);
+			Node minVal = MinValue(root.right);
+			root.data = minVal.data;
 			// Delete the in order successor 
             root.right = DeleteNode(root.right, root.data); 
 		}
@@ -76,7 +75,7 @@ public class DeleteAnyNode {
 		
 		InorderTraversal(root);
 		System.out.print("\nDeleting a node: ");
-		DeleteNode(root, 13);
+		DeleteNode(root, 20);
 		
 		System.out.print("\n");
 		InorderTraversal(root);

@@ -42,15 +42,38 @@ public class LongestSubString {
 			i++;
 		}
 		
+//		for(char c: container) {
+//			System.out.print(c + " ");
+//		}
+		
 		return max;
 	}
+	
+	// leetcode example
+	public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int ans = 0, i = 0, j = 0;
+        Set<Character> set = new HashSet<>();
+        
+        while(i < n && j < n){
+            if(!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            }else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        
+        return ans;
+        
+    }
 
 	public static void main(String[] args) {
 		
 		String mystring = "pwwkew";
 		
-		System.out.print(
-		longestSubString(mystring));
+		System.out.print(  
+				longestSubString(mystring));
 		
 
 	}

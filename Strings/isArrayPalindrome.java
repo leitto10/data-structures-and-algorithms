@@ -8,13 +8,13 @@ package Strings;
  * so passing that array to your method would return true. Arrays with zero or one 
  * element are considered to be palindromes.
  * */
-public class isPalindrome {
+public class isArrayPalindrome {
 	
 	public static boolean ispalidrome(String[] a) {
 		int start = 0, end = a.length-1;
 		
 		while(start < end) {
-			if(!a[start].equals(a[end]) ) {
+			if(a[start] != a[end]) {
 				return false;
 			}
 			start++;
