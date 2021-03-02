@@ -1,11 +1,16 @@
 package Strings;
 /*
- * Given two string t and s, determine wither they are anagram of 
- * each other. 
+ * Given two strings s and t , write a function to determine if t is an anagram of s.
+ * Example 1:
+ * Input: s = "anagram", t = "nagaram"
+ * Output: true
+ * 
+ * Example 2:
+ * Input: s = "rat", t = "car"
+ * Output: false
  * */
 
 public class CheckIfAnagram {
-	
 	//time complexity of O(n). However, it needs extra space for the counting array. 
 	//At 256 integers, for ASCII that's not too bad.
 	public static boolean isAnagram(String str1, String str2) {

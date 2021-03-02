@@ -33,7 +33,7 @@ public class IsPolindrome {
 		System.out.print("\n");
 		
 		System.out.print(
-				isPolindrome(str));
+				isPolindrome(str2));
 	}
 
 }
