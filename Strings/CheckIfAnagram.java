@@ -23,7 +23,7 @@ public class CheckIfAnagram {
 		str2 = str2.toLowerCase();
 		
 		// if the length are equals
-		int[] letters = new int[256];
+		int[] letters = new int[256]; // ASCII
 		
 		//increment the counts for each character in the first string, 
 		//and decrement the count for each character in the second. 
@@ -46,7 +46,7 @@ public class CheckIfAnagram {
 	public static void main(String[] args) {
 		
 		
-		String s1 = "JOSELopez";
+		String s1 = "joseLopez";
 		String s2 = "lopezjoSe";
 		
 		System.out.print(isAnagram(s1, s2));

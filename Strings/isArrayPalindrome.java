@@ -27,6 +27,8 @@ public class isArrayPalindrome {
 
 	public static void main(String[] args) {
 		
+		//                                          | |
+		
 		String[] arr = {"alpha", "beta", "gamma", "delta", "gamma", "beta", "alpha"};
 		
 		System.out.print(
@@ -34,3 +36,22 @@ public class isArrayPalindrome {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

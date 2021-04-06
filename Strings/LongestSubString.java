@@ -70,7 +70,7 @@ public class LongestSubString {
 
 	public static void main(String[] args) {
 		
-		String mystring = "pwwkew";
+		String mystring = "abbaca";
 		
 		System.out.print(  
 				longestSubString(mystring));
